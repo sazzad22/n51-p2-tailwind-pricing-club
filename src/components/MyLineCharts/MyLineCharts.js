@@ -54,7 +54,8 @@ const MyLineCharts = () => {
             <Line dataKey={'amt'}></Line>
             <XAxis dataKey='name' ></XAxis>
             <YAxis dataKey={'sales'} ></YAxis>
-        </LineChart>
+      </LineChart>
+      
     );
 };
 

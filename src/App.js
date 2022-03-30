@@ -23,15 +23,49 @@ function App() {
     onRest: () => set(!flip),
   })
 
+  //svg stroke animation
+  // const [flip, set] = useState(false)
+  // const { x } = useSpring({
+  //   reset: true,
+  //   reverse: flip,
+  //   from: { x: 0 },
+  //   x: 1,
+  //   delay: 200,
+  //   config: config.molasses,
+  //   onRest: () => set(!flip),
+  // })
+  
+  /* 
+  necessary links - https://axios-http.com/docs/intro
+  https://react-bootstrap.github.io/
+  https://react-spring.io/basics
+  */
+
 
   return (
     <div className='App'>
       <Navbar></Navbar>
 
-      {/* Animated Text */}
+      {/* Animated Text  */}
       <animated.div style={props}>
         <h1 className='text-6xl text-indigo-300 '>Welcome Fellow Traveler!</h1>
-     </animated.div>
+      </animated.div>
+      
+
+      {/* Storke animatin  */}
+      {/* <animated.svg
+      style={{ margin: 20, width: 80, height: 80 }}
+      viewBox="0 0 45 44"
+      strokeWidth="2"
+      fill="white"
+      stroke="rgb(45, 55, 71)"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeDasharray={156}
+      strokeDashoffset={x.to(x => (1 - x) * 156)}>
+      <h2>Welcome</h2>
+    </animated.svg> */}
+
 
       {/* Animation tags can be coated over pricing component */}
      
@@ -40,6 +74,7 @@ function App() {
 
       {/* Adding charts */}
       <MyLineCharts></MyLineCharts>
+      
 
       {/* Axios js
         Uses instead of fetch, for loading data
