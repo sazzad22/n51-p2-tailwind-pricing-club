@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Link = (props) => {
-    console.log(props);
+    // console.log(props);
     const { name, link } = props.route;
     return (
         <li className='mr-16'>
