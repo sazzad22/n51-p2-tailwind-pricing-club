@@ -4,12 +4,39 @@ import Navbar from './components/Navbar/Navbar';
 import Pricing from './components/Pricing/Pricing';
 import MyLineCharts from './components/MyLineCharts/MyLineCharts';
 import SpecialCharts from './components/SpecialCharts/SpecialCharts';
+import { useSpring, animated, config } from 'react-spring'
+import { useState } from 'react';
 
 function App() {
+
+  //Using spring for animation in react
+  //react-spring is a spring-physics based animation library that should cover most of your UI related animation needs. It gives you tools flexible enough to confidently cast your ideas into moving interfaces.
+
+  const [flip, set] = useState(false)
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    reset: true,
+    reverse: flip,
+    delay: 30,
+    config: config.molasses,
+    onRest: () => set(!flip),
+  })
+
+
   return (
     <div className='App'>
       <Navbar></Navbar>
-      <Pricing></Pricing>
+
+      {/* Animated Text */}
+      <animated.div style={props}>
+        <h1 className='text-6xl text-indigo-300 '>Welcome Fellow Traveler!</h1>
+     </animated.div>
+
+      {/* Animation tags can be coated over pricing component */}
+     
+        <Pricing></Pricing>
+       
 
       {/* Adding charts */}
       <MyLineCharts></MyLineCharts>
